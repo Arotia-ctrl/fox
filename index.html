@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{background-color: bisque;}
+        #div{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 5px solid crimson;
+            
+        }
+        button{
+            background-color: transparent;
+            border-radius: 3px solid crimson;
+            border-style:dotted;
+            box-shadow: 6px 6px black;
+            font-size: 25px;
+        }
+        button:hover{
+            transform: translateY(-2px) scale(1.03);
+        }
+        p{
+            font-family: fantasy;
+        }
+
+        #h1{
+            font-family: cursive;
+        }
+
+        #prank{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+    <title>Safe</title>
+</head>
+<body>
+    <div id="div">
+        <h1 id="h">Entrer vos informations</h1>
+        <label>Est tu gay ?: </label>
+        <select name="" id="">
+            <option value="">oui</option>
+            <option value="">non</option>
+        </select>
+        <br><br>
+        <label for="prenom">Prenom: </label>
+        <input type="text" id="prenom">
+        <br><br>
+        <button id="bouton">Valider</button>
+    </div>
+    <div id="prank">
+        <h1 id="h1"></h1>
+        <p id="status"></p>   
+    </div>
+    
+
+    <script>
+        let prenom;
+        
+
+        document.getElementById("bouton").onclick = function (){
+            prenom = document.getElementById("prenom").value;
+            document.getElementById("div").style.display = "none";
+
+            setTimeout(function (){
+                document.getElementById("h1").textContent = `Bienvenue ${prenom}!`;
+            },200);
+            
+            setTimeout(function (){
+                document.getElementById("status").textContent = `Connexion au serveur en cours... `;
+
+            },1000);
+
+            setTimeout(function (){
+                document.getElementById("status").textContent = `Securisation de la connexion...`;
+            },2000);
+
+            setTimeout(function (){
+                document.getElementById("status").textContent = `Connecte avec succes`;
+            },5000)
+
+        
+            setTimeout(function (){
+
+                for (let i= 0; i < 20; i++){
+                    window.alert(`${prenom} est GAY !!!!`);
+                }
+            },6000);
+            
+           
+        }
+
+
+
+    </script>
+</body>
+</html>
